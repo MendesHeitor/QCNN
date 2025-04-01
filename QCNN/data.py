@@ -4,6 +4,7 @@ import tensorflow as tf
 from sklearn.decomposition import PCA
 from tensorflow.keras.models import Model
 from tensorflow.keras import layers, losses
+
 pca32 = ['pca32-1', 'pca32-2', 'pca32-3', 'pca32-4']
 autoencoder32 = ['autoencoder32-1', 'autoencoder32-2', 'autoencoder32-3', 'autoencoder32-4']
 pca30 = ['pca30-1', 'pca30-2', 'pca30-3', 'pca30-4']
@@ -18,6 +19,13 @@ def data_load_and_process(dataset, classes=[0, 1], feature_reduction='resize256'
         (x_train, y_train), (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
     elif dataset == 'mnist':
         (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    elif dataset == 'cifar10':
+        (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
+        # Resizing to 28x28 => !NOTE: We should experiment with another idea other than resizing it here
+        x_train = tf.image.resize(x_train, (28, 28)).numpy()
+        x_test = tf.image.resize(x_test, (28, 28)).numpy()
+    
+    print(x_train.shape, x_test.shape, type(x_train), type(x_test))
 
     x_train, x_test = x_train[..., np.newaxis] / 255.0, x_test[..., np.newaxis] / 255.0  # normalize the data
 
