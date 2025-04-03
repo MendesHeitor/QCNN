@@ -24,6 +24,9 @@ def data_load_and_process(dataset, classes=[0, 1], feature_reduction='resize256'
         # Resizing to 28x28 => !NOTE: We should experiment with another idea other than resizing it here
         x_train = tf.image.resize(x_train, (28, 28)).numpy()
         x_test = tf.image.resize(x_test, (28, 28)).numpy()
+        # Convert to grayscale => !NOTE: We should experiment with another idea other than converting to grayscale it here
+        x_train = tf.image.rgb_to_grayscale(x_train).numpy()
+        x_test = tf.image.rgb_to_grayscale(x_test).numpy()
     
     print(x_train.shape, x_test.shape, type(x_train), type(x_test))
 
