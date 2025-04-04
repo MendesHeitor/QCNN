@@ -25,12 +25,16 @@ def data_load_and_process(dataset, classes=[0, 1], feature_reduction='resize256'
         x_train = tf.image.resize(x_train, (28, 28)).numpy()
         x_test = tf.image.resize(x_test, (28, 28)).numpy()
         # Convert to grayscale => !NOTE: We should experiment with another idea other than converting to grayscale it here
-        x_train = tf.image.rgb_to_grayscale(x_train).numpy()
-        x_test = tf.image.rgb_to_grayscale(x_test).numpy()
-    
+        x_train = tf.image.rgb_to_grayscale(x_train).numpy().squeeze()
+        x_test = tf.image.rgb_to_grayscale(x_test).numpy().squeeze()
+        y_train = y_train.squeeze()
+        y_test = y_test.squeeze()
+
     print(x_train.shape, x_test.shape, type(x_train), type(x_test))
 
     x_train, x_test = x_train[..., np.newaxis] / 255.0, x_test[..., np.newaxis] / 255.0  # normalize the data
+
+    print(x_train.shape, x_test.shape, type(x_train), type(x_test))
 
     if classes == 'odd_even':
         odd = [1, 3, 5, 7, 9]
@@ -55,23 +59,29 @@ def data_load_and_process(dataset, classes=[0, 1], feature_reduction='resize256'
             Y_test = [1 if y in greater else -1 for y in y_test]
 
     else:
+        print(x_train.shape, x_test.shape, type(x_train), type(x_test))
+        print(y_train.shape, y_test.shape, type(y_train), type(y_test))
         x_train_filter_01 = np.where((y_train == classes[0]) | (y_train == classes[1]))
         x_test_filter_01 = np.where((y_test == classes[0]) | (y_test == classes[1]))
-
+        print(x_train.shape, x_test.shape, type(x_train), type(x_test))
         X_train, X_test = x_train[x_train_filter_01], x_test[x_test_filter_01]
         Y_train, Y_test = y_train[x_train_filter_01], y_test[x_test_filter_01]
-
+        print("66", X_train.shape, X_test.shape, type(X_train), type(X_test))
         if binary == False:
             Y_train = [1 if y == classes[0] else 0 for y in Y_train]
             Y_test = [1 if y == classes[0] else 0 for y in Y_test]
         elif binary == True:
             Y_train = [1 if y == classes[0] else -1 for y in Y_train]
             Y_test = [1 if y == classes[0] else -1 for y in Y_test]
+        print("73", X_train.shape, X_test.shape, type(X_train), type(X_test))
 
     if feature_reduction == 'resize256':
         X_train = tf.image.resize(X_train[:], (256, 1)).numpy()
         X_test = tf.image.resize(X_test[:], (256, 1)).numpy()
+        print(X_train.shape, X_test.shape, type(X_train), type(X_test))
         X_train, X_test = tf.squeeze(X_train).numpy(), tf.squeeze(X_test).numpy()
+        # print(X_train.shape, X_test.shape, type(X_train), type(X_test))
+        # print(len(Y_train), len(Y_test), type(Y_train), type(Y_test))
         return X_train, X_test, Y_train, Y_test
 
     elif feature_reduction == 'pca8' or feature_reduction in pca32 \
