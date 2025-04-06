@@ -19,6 +19,13 @@ Unitaries = ['U_TTN', 'U_5', 'U_6', 'U_9', 'U_13', 'U_14', 'U_15', 'U_SO4', 'U_S
 U_num_params = [2, 10, 10, 2, 6, 6, 4, 6, 15, 15, 15, 2]
 Encodings = ['resize256', 'pca8', 'autoencoder8', 'pca16-compact', 'autoencoder16-compact', 'pca32-1', 'autoencoder32-1',
             'pca16-1', 'autoencoder16-1', 'pca30-1', 'autoencoder30-1', 'pca12-1', 'autoencoder12-1']
+
+
+# Unitaries = ['U_TTN']
+# U_num_params = [2]
+# Encodings = ['autoencoder16-1', 'pca30-1', 'autoencoder30-1', 'pca12-1', 'autoencoder12-1']
+
+
 dataset = 'cifar10'
 classes = [0,1]
 binary = False

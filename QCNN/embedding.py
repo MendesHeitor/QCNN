@@ -43,6 +43,13 @@ def data_embedding(X, embedding_type='Amplitude'):
         X4 = X[12:16]
         norm_X1, norm_X2, norm_X3, norm_X4 = np.linalg.norm(X1), np.linalg.norm(X2), np.linalg.norm(X3), np.linalg.norm(
             X4)
+        
+        #!Addition => offset to avoid zero division error
+        norm_X1 += 1e-10
+        norm_X2 += 1e-10
+        norm_X3 += 1e-10
+        norm_X4 += 1e-10
+
         X1, X2, X3, X4 = X1 / norm_X1, X2 / norm_X2, X3 / norm_X3, X4 / norm_X4
 
         if embedding_type == 'Amplitude-Hybrid2-1':
