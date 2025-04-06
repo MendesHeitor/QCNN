@@ -15,16 +15,14 @@ cost_fn: 'mse' or 'cross_entropy'
 Note: when using 'mse' as cost_fn binary="True" is recommended, when using 'cross_entropy' as cost_fn must be binary="False".
 """
 
-Unitaries = ['U_TTN', 'U_5', 'U_6', 'U_9', 'U_13', 'U_14', 'U_15', 'U_SO4', 'U_SU4', 'U_SU4_no_pooling', 'U_SU4_1D', 'U_9_1D']
-U_num_params = [2, 10, 10, 2, 6, 6, 4, 6, 15, 15, 15, 2]
-Encodings = ['resize256', 'pca8', 'autoencoder8', 'pca16-compact', 'autoencoder16-compact', 'pca32-1', 'autoencoder32-1',
-            'pca16-1', 'autoencoder16-1', 'pca30-1', 'autoencoder30-1', 'pca12-1', 'autoencoder12-1']
+Unitaries = ['U_TTN', 'U_9', 'U_15', 'U_13', 'U_14', 'U_SO4', 'U_5', 'U_6', 'U_SU4']
+U_num_params = [2, 2, 4, 6, 6, 6, 10, 10, 15]
+Encodings = ['resize256', 'pca8', 'autoencoder8', 'pca16-compact', 'autoencoder16-compact', 'pca32-1', 'autoencoder32-1', 'pca30-1', 'autoencoder30-1']
 
 
 # Unitaries = ['U_TTN']
 # U_num_params = [2]
 # Encodings = ['autoencoder16-1', 'pca30-1', 'autoencoder30-1', 'pca12-1', 'autoencoder12-1']
-
 
 dataset = 'cifar10'
 classes = [0,1]

@@ -141,34 +141,40 @@ def Benchmarking(dataset, classes, Unitaries, U_num_params, Encodings, circuit, 
 
     for i in range(I):
         for j in range(J):
-            f = open('Result/result.txt', 'a')
-            U = Unitaries[i]
-            U_params = U_num_params[i]
-            Encoding = Encodings[j]
-            Embedding = Encoding_to_Embedding(Encoding)
+            try:
+                f = open('Result/result.txt', 'a')
+                U = Unitaries[i]
+                U_params = U_num_params[i]
+                Encoding = Encodings[j]
+                Embedding = Encoding_to_Embedding(Encoding)
 
-            X_train, X_test, Y_train, Y_test = data.data_load_and_process(dataset, classes=classes,
-                                                                          feature_reduction=Encoding, binary=binary)
+                X_train, X_test, Y_train, Y_test = data.data_load_and_process(dataset, classes=classes,
+                                                                            feature_reduction=Encoding, binary=binary)
 
-            print("\n")
-            print("Loss History for " + circuit + " circuits, " + U + " " + Encoding + " with " + cost_fn)
-            loss_history, trained_params = Training.circuit_training(X_train, Y_train, U, U_params, Embedding, circuit, cost_fn)
+                print("\n")
+                print("Loss History for " + circuit + " circuits, " + U + " " + Encoding + " with " + cost_fn)
+                loss_history, trained_params = Training.circuit_training(X_train, Y_train, U, U_params, Embedding, circuit, cost_fn)
 
-            if circuit == 'QCNN':
-                predictions = [QCNN_circuit.QCNN(x, trained_params, U, U_params, Embedding, cost_fn) for x in X_test]
-            elif circuit == 'Hierarchical':
-                predictions = [Hierarchical_circuit.Hierarchical_classifier(x, trained_params, U, U_params, Embedding, cost_fn) for x in X_test]
+                if circuit == 'QCNN':
+                    predictions = [QCNN_circuit.QCNN(x, trained_params, U, U_params, Embedding, cost_fn) for x in X_test]
+                elif circuit == 'Hierarchical':
+                    predictions = [Hierarchical_circuit.Hierarchical_classifier(x, trained_params, U, U_params, Embedding, cost_fn) for x in X_test]
 
-            accuracy = accuracy_test(predictions, Y_test, cost_fn, binary)
-            print("Accuracy for " + U + " " + Encoding + " :" + str(accuracy))
+                accuracy = accuracy_test(predictions, Y_test, cost_fn, binary)
+                print("Accuracy for " + U + " " + Encoding + " :" + str(accuracy))
 
-            f.write("Loss History for " + circuit + " circuits, " + U + " " + Encoding + " with " + cost_fn)
-            f.write("\n")
-            f.write(str(loss_history))
-            f.write("\n")
-            f.write("Accuracy for " + U + " " + Encoding + " :" + str(accuracy))
-            f.write("\n")
-            f.write("\n")
+                f.write("Loss History for " + circuit + " circuits, " + U + " " + Encoding + " with " + cost_fn)
+                f.write("\n")
+                f.write(str(loss_history))
+                f.write("\n")
+                f.write("Accuracy for " + U + " " + Encoding + " :" + str(accuracy))
+                f.write("\n")
+                f.write("\n")
+            except:
+                print("Error in " + U + " " + Encoding + " with " + cost_fn)
+                f.write("Error in " + U + " " + Encoding + " with " + cost_fn)
+                f.write("\n")
+                f.write("\n")
     f.close()
 
 def Data_norm(dataset, classes, Encodings, binary=True):
