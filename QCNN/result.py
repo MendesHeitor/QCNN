@@ -15,8 +15,8 @@ cost_fn: 'mse' or 'cross_entropy'
 Note: when using 'mse' as cost_fn binary="True" is recommended, when using 'cross_entropy' as cost_fn must be binary="False".
 """
 
-Unitaries = ['U_5', 'U_6', 'U_SU4']
-U_num_params = [6, 10, 10, 15]
+Unitaries = ['U_5', 'U_SU4']
+U_num_params = [10, 15]
 Encodings = ['resize256', 'pca8', 'autoencoder8', 'pca16-compact', 'autoencoder16-compact', 'pca32-1', 'autoencoder32-1', 'pca30-1', 'autoencoder30-1']
 
 
@@ -29,12 +29,12 @@ classes = [0,1]
 binary = False
 cost_fn = 'cross_entropy'
 
-u_so4 = ['U_SO4']
-u_so4_num_params = [6]
-u_so4_encoding = ['pca16-compact', 'autoencoder16-compact', 'pca32-1', 'autoencoder32-1']
+# u_so4 = ['U_SO4']
+# u_so4_num_params = [6]
+# u_so4_encoding = ['pca16-compact', 'autoencoder16-compact', 'pca32-1', 'autoencoder32-1']
 
 
-Benchmarking.Benchmarking(dataset, classes, u_so4, u_so4_num_params, u_so4_encoding, circuit='QCNN', cost_fn=cost_fn, binary=binary)
+# Benchmarking.Benchmarking(dataset, classes, u_so4, u_so4_num_params, u_so4_encoding, circuit='QCNN', cost_fn=cost_fn, binary=binary)
 Benchmarking.Benchmarking(dataset, classes, Unitaries, U_num_params, Encodings, circuit='QCNN', cost_fn=cost_fn, binary=binary)
 #Benchmarking.Benchmarking(dataset, classes, Unitaries, U_num_params, Encodings, circuit='Hierarchical', cost_fn=cost_fn, binary=binary)
 
