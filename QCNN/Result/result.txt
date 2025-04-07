@@ -2,3 +2,165 @@ Loss History for QCNN circuits, U_SU4 resize256 with cross_entropy
 [17.22721795186222, 17.84149386327348, 17.342009225689633, 17.125294193070893, 17.161727076809523, 17.406526358102862, 19.77415945665113, 17.497040932463484, 17.564344975349496, 18.012646875883437, 17.291977244420785, 17.281752256500173, 17.46684103378852, 17.470622297987887, 17.097865433393725, 17.507953028252857, 17.212356508985774, 17.309894113936693, 16.87293006265566, 17.65708795660662, 17.301169383357475, 17.17143678851472, 17.667105914604647, 17.366262658655593, 17.289074417208187, 16.851213683109616, 16.795812027118615, 16.594004611342797, 17.471000121311032, 16.461890544023326, 18.939311854876568, 17.266866061536987, 17.214025596080642, 19.43128713113333, 18.1522281262433, 17.244741085795503, 16.286817298567048, 16.65287848258696, 19.13860222277907, 17.30002945841726, 16.376019025667755, 17.541366210681005, 17.173696319933146, 17.681404725769397, 17.415197545715653, 17.554574755678757, 17.336725124572663, 17.811834604321092, 17.39076536977368, 17.374095089689117, 17.29094344447917, 17.375712609226802, 17.679898748647975, 17.810091195780277, 17.340453690677183, 17.41666180963615, 17.846081842992113, 17.259335270739612, 17.237046804347234, 17.479248072714462, 17.443276103687847, 17.219129166630303, 16.936485548256748, 17.27578444942404, 16.34143922555096, 17.925104341884257, 16.986362611419093, 17.033895892703402, 17.402844528654548, 17.186899070735777, 17.655494923341863, 17.1198039182451, 17.08405721980316, 17.431731255696295, 16.52169442306467, 17.452349245171686, 16.825141138065906, 15.748823024926567, 16.157595225556598, 18.0087770892796, 16.193356322975806, 16.329846859503096, 17.828771175996156, 18.9987691457026, 16.911975554195113, 18.015568081557184, 18.472288398810026, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]
 Accuracy for U_SU4 resize256 :0.5
 
+Error in U_TTN resize256 with cross_entropy
+
+Error in U_TTN pca8 with cross_entropy
+
+Error in U_TTN autoencoder8 with cross_entropy
+
+Error in U_TTN pca16-compact with cross_entropy
+
+Error in U_TTN autoencoder16-compact with cross_entropy
+
+Error in U_TTN pca32-1 with cross_entropy
+
+Error in U_TTN autoencoder32-1 with cross_entropy
+
+Error in U_TTN pca30-1 with cross_entropy
+
+Error in U_TTN autoencoder30-1 with cross_entropy
+
+Error in U_9 resize256 with cross_entropy
+
+Error in U_9 pca8 with cross_entropy
+
+Error in U_9 autoencoder8 with cross_entropy
+
+Error in U_9 pca16-compact with cross_entropy
+
+Error in U_9 autoencoder16-compact with cross_entropy
+
+Error in U_9 pca32-1 with cross_entropy
+
+Error in U_9 autoencoder32-1 with cross_entropy
+
+Error in U_9 pca30-1 with cross_entropy
+
+Error in U_9 autoencoder30-1 with cross_entropy
+
+Error in U_15 resize256 with cross_entropy
+
+Error in U_15 pca8 with cross_entropy
+
+Error in U_15 autoencoder8 with cross_entropy
+
+Error in U_15 pca16-compact with cross_entropy
+
+Error in U_15 autoencoder16-compact with cross_entropy
+
+Error in U_15 pca32-1 with cross_entropy
+
+Error in U_15 autoencoder32-1 with cross_entropy
+
+Error in U_15 pca30-1 with cross_entropy
+
+Error in U_15 autoencoder30-1 with cross_entropy
+
+Error in U_13 resize256 with cross_entropy
+
+Error in U_13 pca8 with cross_entropy
+
+Error in U_13 autoencoder8 with cross_entropy
+
+Error in U_13 pca16-compact with cross_entropy
+
+Error in U_13 autoencoder16-compact with cross_entropy
+
+Error in U_13 pca32-1 with cross_entropy
+
+Error in U_13 autoencoder32-1 with cross_entropy
+
+Error in U_13 pca30-1 with cross_entropy
+
+Error in U_13 autoencoder30-1 with cross_entropy
+
+Error in U_14 resize256 with cross_entropy
+
+Error in U_14 pca8 with cross_entropy
+
+Error in U_14 autoencoder8 with cross_entropy
+
+Error in U_14 pca16-compact with cross_entropy
+
+Error in U_14 autoencoder16-compact with cross_entropy
+
+Error in U_14 pca32-1 with cross_entropy
+
+Error in U_14 autoencoder32-1 with cross_entropy
+
+Error in U_14 pca30-1 with cross_entropy
+
+Error in U_14 autoencoder30-1 with cross_entropy
+
+Error in U_SO4 resize256 with cross_entropy
+
+Error in U_SO4 pca8 with cross_entropy
+
+Error in U_SO4 autoencoder8 with cross_entropy
+
+Error in U_SO4 pca16-compact with cross_entropy
+
+Error in U_SO4 autoencoder16-compact with cross_entropy
+
+Error in U_SO4 pca32-1 with cross_entropy
+
+Error in U_SO4 autoencoder32-1 with cross_entropy
+
+Error in U_SO4 pca30-1 with cross_entropy
+
+Error in U_SO4 autoencoder30-1 with cross_entropy
+
+Error in U_5 resize256 with cross_entropy
+
+Error in U_5 pca8 with cross_entropy
+
+Error in U_5 autoencoder8 with cross_entropy
+
+Error in U_5 pca16-compact with cross_entropy
+
+Error in U_5 autoencoder16-compact with cross_entropy
+
+Error in U_5 pca32-1 with cross_entropy
+
+Error in U_5 autoencoder32-1 with cross_entropy
+
+Error in U_5 pca30-1 with cross_entropy
+
+Error in U_5 autoencoder30-1 with cross_entropy
+
+Error in U_6 resize256 with cross_entropy
+
+Error in U_6 pca8 with cross_entropy
+
+Error in U_6 autoencoder8 with cross_entropy
+
+Error in U_6 pca16-compact with cross_entropy
+
+Error in U_6 autoencoder16-compact with cross_entropy
+
+Error in U_6 pca32-1 with cross_entropy
+
+Error in U_6 autoencoder32-1 with cross_entropy
+
+Error in U_6 pca30-1 with cross_entropy
+
+Error in U_6 autoencoder30-1 with cross_entropy
+
+Error in U_SU4 resize256 with cross_entropy
+
+Error in U_SU4 pca8 with cross_entropy
+
+Error in U_SU4 autoencoder8 with cross_entropy
+
+Error in U_SU4 pca16-compact with cross_entropy
+
+Error in U_SU4 autoencoder16-compact with cross_entropy
+
+Error in U_SU4 pca32-1 with cross_entropy
+
+Error in U_SU4 autoencoder32-1 with cross_entropy
+
+Error in U_SU4 pca30-1 with cross_entropy
+
+Error in U_SU4 autoencoder30-1 with cross_entropy
+
