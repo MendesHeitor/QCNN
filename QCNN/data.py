@@ -4,6 +4,7 @@ import tensorflow as tf
 from sklearn.decomposition import PCA
 from tensorflow.keras.models import Model
 from tensorflow.keras import layers, losses
+import matplotlib.pyplot as plt  # Add this import at the top of the file
 
 pca32 = ['pca32-1', 'pca32-2', 'pca32-3', 'pca32-4']
 autoencoder32 = ['autoencoder32-1', 'autoencoder32-2', 'autoencoder32-3', 'autoencoder32-4']
@@ -74,8 +75,16 @@ def data_load_and_process(dataset, classes=[0, 1], feature_reduction='resize256'
             Y_train = [1 if y == classes[0] else -1 for y in Y_train]
             Y_test = [1 if y == classes[0] else -1 for y in Y_test]
         # print("73", X_train.shape, X_test.shape, type(X_train), type(X_test))
-
+        
     if feature_reduction == 'resize256':
+        # Save an image with label 0
+        label_0_index = np.where(np.array(Y_train) == 0)[0][0]
+        plt.imsave('label_0_image.png', X_train[label_0_index].squeeze(), cmap='gray')
+
+        # Save an image with label 1
+        label_1_index = np.where(np.array(Y_train) == 1)[0][0]
+        plt.imsave('label_1_image.png', X_train[label_1_index].squeeze(), cmap='gray')
+
         X_train = tf.image.resize(X_train[:], (256, 1)).numpy()
         X_test = tf.image.resize(X_test[:], (256, 1)).numpy()
         # print(X_train.shape, X_test.shape, type(X_train), type(X_test))

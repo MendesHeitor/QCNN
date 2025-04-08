@@ -2,6 +2,8 @@ import data
 import numpy as np
 import torch
 import torch.nn as nn
+import torchsummary
+
 
 def get_n_params(model):
     np=0
@@ -42,6 +44,8 @@ def Benchmarking_CNN(dataset, classes, Encodings, Encodings_size, binary, optimi
             nn.Flatten(),
             nn.Linear(n_feature * final_layer_size, 2)
         )
+
+        torchsummary.summary(CNN, (1, input_size), device='cpu')
 
         loss_history = []
         for it in range(steps):
@@ -91,14 +95,14 @@ def Benchmarking_CNN(dataset, classes, Encodings, Encodings_size, binary, optimi
     f.close()
 
 steps = 200
-dataset = 'fashion_mnist'
+dataset = 'cifar10'
 classes = [0,1]
 binary = False
-Encodings = ['pca8', 'autoencoder8', 'pca16-compact', 'autoencoder16-compact']
-Encodings_size = [8, 8, 16, 16]
+Encodings = ['pca16-compact', 'autoencoder16-compact']
+Encodings_size = [16, 16]
 
-for i in range(5):
-    Benchmarking_CNN(dataset=dataset, classes=classes, Encodings=Encodings, Encodings_size=Encodings_size,
-                     binary=binary, optimizer='adam')
+# for i in range(5):
+Benchmarking_CNN(dataset=dataset, classes=classes, Encodings=Encodings, Encodings_size=Encodings_size,
+                    binary=binary, optimizer='adam')
     #Benchmarking_CNN(dataset=dataset, classes=classes, Encodings=Encodings, Encodings_size=Encodings_size,
     #                 binary=binary, optimizer='nesterov')

@@ -29,12 +29,12 @@ classes = [0,1]
 binary = False
 cost_fn = 'cross_entropy'
 
-# u_so4 = ['U_SO4']
-# u_so4_num_params = [6]
+u_su4 = ['U_SU4_no_pooling']
+u_su4_num_params = [15]
 # u_so4_encoding = ['pca16-compact', 'autoencoder16-compact', 'pca32-1', 'autoencoder32-1']
 
 
 # Benchmarking.Benchmarking(dataset, classes, u_so4, u_so4_num_params, u_so4_encoding, circuit='QCNN', cost_fn=cost_fn, binary=binary)
-Benchmarking.Benchmarking(dataset, classes, Unitaries, U_num_params, Encodings, circuit='QCNN', cost_fn=cost_fn, binary=binary)
+Benchmarking.Benchmarking(dataset, classes, u_su4, u_su4_num_params, Encodings, circuit='QCNN', cost_fn=cost_fn, binary=binary)
 #Benchmarking.Benchmarking(dataset, classes, Unitaries, U_num_params, Encodings, circuit='Hierarchical', cost_fn=cost_fn, binary=binary)
 
